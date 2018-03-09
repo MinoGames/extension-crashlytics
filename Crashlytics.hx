@@ -7,7 +7,7 @@ import neko.Lib;
 #end
 
 #if (android && openfl)
-import openfl.utils.JNI;
+import flash.utils.JNI;
 #end
 
 
