@@ -18,7 +18,7 @@ android {
 
 dependencies {
 	compile project(':deps:extension-api')
-	compile('com.crashlytics.sdk.android:crashlytics:2.7.0@aar') {
+	compile('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
 		transitive = true;
 	}
 }
