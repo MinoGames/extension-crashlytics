@@ -22,7 +22,7 @@ class Crashlytics {
         #elseif ios
         extension_crashlytics_init();
         #else
-        trace("nothing");
+        
         #end
     }
 
