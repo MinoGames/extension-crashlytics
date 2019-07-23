@@ -16,7 +16,7 @@ class Crashlytics {
     public static function init():Void {
         #if (android && openfl)
         if (extension_crashlytics_init_jni == null) {
-            extension_crashlytics_init_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionCrashlytics", "init", "()V");
+            extension_crashlytics_init_jni = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org.haxe.extension.ExtensionCrashlytics", "init", "()V");
         }
         extension_crashlytics_init_jni();
         #elseif ios
@@ -29,7 +29,7 @@ class Crashlytics {
     public static function log (msg:String):Void {
         #if (android && openfl)
         if (extension_crashlytics_log_jni == null) {
-            extension_crashlytics_log_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionCrashlytics", "log", "(Ljava/lang/String;)V");
+            extension_crashlytics_log_jni = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org.haxe.extension.ExtensionCrashlytics", "log", "(Ljava/lang/String;)V");
         }
         extension_crashlytics_log_jni(msg);
         #elseif ios
@@ -40,7 +40,7 @@ class Crashlytics {
     public static function trace (msg:String):Void {
         #if (android && openfl)
         if (extension_crashlytics_trace_jni == null) {
-            extension_crashlytics_trace_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionCrashlytics", "trace", "(Ljava/lang/String;)V");
+            extension_crashlytics_trace_jni = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org.haxe.extension.ExtensionCrashlytics", "trace", "(Ljava/lang/String;)V");
         }
         extension_crashlytics_trace_jni(msg);
         #elseif ios
@@ -53,7 +53,7 @@ class Crashlytics {
     public static function setBool (key:String, value:Bool):Void {
         #if (android && openfl)
         if (extension_crashlytics_set_bool_jni == null) {
-            extension_crashlytics_set_bool_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionCrashlytics", "setBool", "(Ljava/lang/String;Z)V");
+            extension_crashlytics_set_bool_jni = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org.haxe.extension.ExtensionCrashlytics", "setBool", "(Ljava/lang/String;Z)V");
         }
         extension_crashlytics_set_bool_jni(key, value);
         #elseif ios
@@ -64,7 +64,7 @@ class Crashlytics {
     public static function setDouble (key:String, value:Float):Void {
         #if (android && openfl)
         if (extension_crashlytics_set_double_jni == null) {
-            extension_crashlytics_set_double_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionCrashlytics", "setDouble", "(Ljava/lang/String;D)V");
+            extension_crashlytics_set_double_jni = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org.haxe.extension.ExtensionCrashlytics", "setDouble", "(Ljava/lang/String;D)V");
         }
         extension_crashlytics_set_double_jni(key, value);
         #elseif ios
@@ -75,7 +75,7 @@ class Crashlytics {
     public static function setFloat (key:String, value:Float):Void {
         #if (android && openfl)
         if (extension_crashlytics_set_float_jni == null) {
-            extension_crashlytics_set_float_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionCrashlytics", "setFloat", "(Ljava/lang/String;F)V");
+            extension_crashlytics_set_float_jni = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org.haxe.extension.ExtensionCrashlytics", "setFloat", "(Ljava/lang/String;F)V");
         }
         extension_crashlytics_set_float_jni(key, value);
         #elseif ios
@@ -86,7 +86,7 @@ class Crashlytics {
     public static function setInt (key:String, value:Int):Void {
         #if (android && openfl)
         if (extension_crashlytics_set_int_jni == null) {
-            extension_crashlytics_set_int_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionCrashlytics", "setInt", "(Ljava/lang/String;I)V");
+            extension_crashlytics_set_int_jni = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org.haxe.extension.ExtensionCrashlytics", "setInt", "(Ljava/lang/String;I)V");
         }
         extension_crashlytics_set_int_jni(key, value);
         #elseif ios
@@ -97,7 +97,7 @@ class Crashlytics {
     public static function setString (key:String, value:String):Void {
         #if (android && openfl)
         if (extension_crashlytics_set_string_jni == null) {
-            extension_crashlytics_set_string_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionCrashlytics", "setString", "(Ljava/lang/String;Ljava/lang/String;)V");
+            extension_crashlytics_set_string_jni = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org.haxe.extension.ExtensionCrashlytics", "setString", "(Ljava/lang/String;Ljava/lang/String;)V");
         }
         extension_crashlytics_set_string_jni(key, value);
         #elseif ios
@@ -108,7 +108,7 @@ class Crashlytics {
     public static function setUserIdentifier (identifier:String):Void {
         #if (android && openfl)
         if (extension_crashlytics_set_user_identifier_jni == null) {
-            extension_crashlytics_set_user_identifier_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionCrashlytics", "setUserIdentifier", "(Ljava/lang/String;)V");
+            extension_crashlytics_set_user_identifier_jni = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org.haxe.extension.ExtensionCrashlytics", "setUserIdentifier", "(Ljava/lang/String;)V");
         }
         extension_crashlytics_set_user_identifier_jni(identifier);
         #elseif ios
@@ -119,7 +119,7 @@ class Crashlytics {
     public static function setUserName (name:String):Void {
         #if (android && openfl)
         if (extension_crashlytics_set_user_name_jni == null) {
-            extension_crashlytics_set_user_name_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionCrashlytics", "setUserName", "(Ljava/lang/String;)V");
+            extension_crashlytics_set_user_name_jni = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org.haxe.extension.ExtensionCrashlytics", "setUserName", "(Ljava/lang/String;)V");
         }
         extension_crashlytics_set_user_name_jni(name);
         #elseif ios
@@ -130,7 +130,7 @@ class Crashlytics {
     public static function setUserEmail (email:String):Void {
         #if (android && openfl)
         if (extension_crashlytics_set_user_email_jni == null) {
-            extension_crashlytics_set_user_email_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionCrashlytics", "setUserEmail", "(Ljava/lang/String;)V");
+            extension_crashlytics_set_user_email_jni = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org.haxe.extension.ExtensionCrashlytics", "setUserEmail", "(Ljava/lang/String;)V");
         }
         extension_crashlytics_set_user_email_jni(email);
         #elseif ios
