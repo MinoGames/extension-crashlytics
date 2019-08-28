@@ -75,7 +75,7 @@ class Crashlytics {
     public static function setFloat (key:String, value:Float):Void {
         #if (android && openfl)
         if (extension_crashlytics_set_float_jni == null) {
-            extension_crashlytics_set_float_jni = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org.haxe.extension.ExtensionCrashlytics", "setFloat", "(Ljava/lang/String;F)V");
+            extension_crashlytics_set_float_jni = lime.system.JNI.createStaticMethod ("org.haxe.extension.ExtensionCrashlytics", "setFloat", "(Ljava/lang/String;F)V");
         }
         extension_crashlytics_set_float_jni(key, value);
         #elseif ios
